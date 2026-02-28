@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Otino - Notes Sharing</title>
+    <<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #000;
+        }
+
+        header {
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+        }
+
+        /* ---------- SEARCH ---------- */
+        .search-container {
+            padding: 0 60px;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 40px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            margin: 0 60px 40px;
+            height: 280px;
+            background: #FFC857;
+            border-radius: 6px;
+        }
+
+        /* ---------- FEATURED ---------- */
+        .section {
+            padding: 0 60px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+        }
+
+        .card-img {
+            height: 220px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .rating {
+            font-size: 13px;
+            margin: 6px 0;
+            color: #f4a100;
+        }
+
+        .price {
+            display: inline-block;
+            background: #FFC857;
+            padding: 3px 10px;
+            font-size: 12px;
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+
+        /* ---------- HOW IT WORKS ---------- */
+        .how {
+            margin: 60px;
+            background-image: url(assets/process.png);
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: bold;
+
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: #FFC857;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        footer h3 {
+            font-size: 20px;
+            max-width: 300px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .container-abcd{
+            height:300px;
+            width:1230px;
+            margin:60px;
+            background-color: red;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 1000px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Otino</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Browse Notes</a>
+        <a href="#">Upload</a>
+        <a href="#">Login</a>
+    </nav>
+</header>
+
+<!-- SEARCH -->
+<div class="search-container">
+    <input class="search-box" type="text" placeholder="Search notes by semester , subjects">
+</div>
+
+<!-- HERO -->
+<div class="hero"></div>
+
+<!-- FEATURED NOTES -->
+<section class="section">
+    <h2>Featured Notes</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-img"></div>
+            <h3>Web Technology</h3>
+            <p>CSC-318</p>
+            <p>Raju Rastogi</p>
+            <div class="rating">⭐ 5.0 (250)</div>
+            <span class="price">Rs.5</span>
+        </div>
+
+        <div class="card">
+            <div class="card-img"></div>
+            <h3>Web Technology</h3>
+            <p>CSC-318</p>
+            <p>Raju Rastogi</p>
+            <div class="rating">⭐ 5.0 (250)</div>
+            <span class="price">Rs.5</span>
+        </div>
+
+        <div class="card">
+            <div class="card-img"></div>
+            <h3>Web Technology</h3>
+            <p>CSC-318</p>
+            <p>Raju Rastogi</p>
+            <div class="rating">⭐ 5.0 (250)</div>
+            <span class="price">Rs.5</span>
+        </div>
+
+        <div class="card">
+            <div class="card-img"></div>
+            <h3>Web Technology</h3>
+            <p>CSC-318</p>
+            <p>Raju Rastogi</p>
+            <div class="rating">⭐ 5.0 (250)</div>
+            <span class="price">Rs.5</span>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<div class="how">
+    1. Upload Notes → 2. Students Buy → 3. Earn Money
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Give what you have<br>Take what you need</h3>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Browse Notes</a></li>
+        <li><a href="#">Upload</a></li>
+        <li><a href="#">Login</a></li>
+    </ul>
+</footer>
+
+<div class="container-abcd">
+
+</div>
+
+</body>
+</html>

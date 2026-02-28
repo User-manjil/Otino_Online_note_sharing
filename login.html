@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otino - Login</title>
+
+<link href="style.css" rel="stylesheet">
+<link href="login.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">Otino</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="browse.html">Browse Notes</a>
+        <a href="">Library</a>
+        <a href="login.html">Login/Signup</a>
+
+        
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <div class="left-box"></div>
+
+        <p>
+            The advent of Artificial Intelligence (AI) has brought transformative changes to various industries,
+            and the field of writing is no exception. AI-powered tools have become increasingly sophisticated,
+            offering capabilities that range from grammar correction to generating entire articles. This evolution
+            has sparked a debate about the role of AI in writing and its impact on human creativity.
+        </p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+        <div class="form-card">
+
+            <div class="toggle">
+                <button type="button">Login</button>
+                <button type="button" class="active">Sign up</button>
+            </div>
+        
+            <form id="signupForm">
+        
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="fullname">
+                    <small class="error" id="nameError"></small>
+                </div>
+        
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" id="email">
+                    <small class="error" id="emailError"></small>
+                </div>
+        
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password">
+                    <small class="error" id="passwordError"></small>
+                </div>
+        
+                <div class="extra">
+                    <div>
+                        <input type="checkbox"> Remember me ?
+                    </div>
+                    <a href="#">Forget Password ?</a>
+                </div>
+        
+                <button class="submit-btn" type="submit">Sign up/Login</button>
+        
+            </form>
+        
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Give what you have<br>Take what you need</h3>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Browse Notes</a></li>
+        <li><a href="#">Upload</a></li>
+        <li><a href="#">Login</a></li>
+    </ul>
+</footer>
+
+<script src="login.js">
+</script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+    color:#222;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 60px;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:600;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    font-size:14px;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-container{
+    display:flex;
+    justify-content:center;
+    margin:10px 0 30px 0;
+}
+
+.search-box{
+    width:85%;
+    padding:14px 20px;
+    border-radius:30px;
+    border:1px solid #999;
+    outline:none;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    margin:0 60px;
+    height:280px;
+    background:#f4bd56;
+    border-radius:10px;
+}
+
+/* ================= FEATURED ================= */
+
+.section{
+    padding:50px 60px;
+}
+
+.section h2{
+    margin-bottom:25px;
+}
+
+.cards{
+    display:flex;
+    justify-content:space-between;
+}
+
+.card{
+    width:23%;
+}
+
+.card-img{
+    height:200px;
+    background:#f4bd56;
+    border-radius:15px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.card p{
+    font-size:13px;
+    color:#777;
+}
+
+.rating{
+    font-size:13px;
+    margin:5px 0;
+}
+
+.price{
+    display:inline-block;
+    background:#f4bd56;
+    padding:5px 12px;
+    border-radius:6px;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* ================= HOW IT WORKS ================= */
+
+.howit{
+    padding:0 60px 60px 60px;
+}
+
+.howit h2{
+    margin-bottom:20px;
+}
+
+.how{
+    height:220px;
+    background:#f4bd56;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:40px;
+    background:#f4bd56;
+    padding:60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+footer h3{
+    font-size:24px;
+    line-height:1.4;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer ul li{
+    margin-bottom:10px;
+}
+
+footer ul li a{
+    text-decoration:none;
+    color:#222;
+    font-size:14px;
+}
