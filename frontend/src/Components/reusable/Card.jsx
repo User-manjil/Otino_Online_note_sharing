@@ -10,12 +10,13 @@ const Card = (props) => {
             <div className="flex text-xs font-bold">{props.subCode}</div>
             <div className="flex text-xs">{props.author}</div>
             <div className="flex">
-                <div className="flex w-full justify-between gap-20">
-                    <div className="flex items-center ">{props.rating} <Star size={20} fill='black'/> </div>
-                    <div className="flex bg-amber-400 px-2">{props.rate}</div>
+                <div className="flex w-full justify-between gap-20 items-center text-center">
+                    <div className="flex items-center text-center ">{props.rating} <Star size={16} fill='black'/> </div>
+                    <div className="flex bg-amber-400 px-3 rounded-sm text-center" >{props.rate}</div>
                 </div>
             </div>
-        </div>
+        </div> 
+        
     </div>
   )
 }
