@@ -2,7 +2,8 @@ import React from 'react'
 import Title from '../reusable/Title'
 import Card from '../reusable/Card'
 import { Link } from 'react-router-dom'
-
+import banner from '../../../public/banner.png'
+import { Fullscreen } from 'lucide-react'
 const Home = () => {
   const data =[
   {
@@ -47,16 +48,26 @@ const Home = () => {
     "rating": 4.8,
     "rate": 140
   }
+  ,
+  {
+    "title": "Computer Networks",
+    "subCode": "CSC-320",
+    "author": "Pratik Basnet",
+    "rating": 4.8,
+    "rate": 140
+  }
 ]
   const id=12
   return (
     <div className='w-full     '>
-      <div className='w-full h-90 bg-yellow-400 rounded-xl'></div>
-      <div className="flex flex-col">
+      <div className='w-full h-90 bg-yellow-400 rounded-xl'>
+        <img src={banner} className='w-fit h-full m-auto' alt="" />
+      </div>
+      <div className="flex flex-col ">
         <Title heading="Featured Notes" />
-        <div className="grid items-center content-center gap-10 lg:grid-cols-6 m-auto">
+        <div className="grid items-center w-full gap-10   sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 m-auto ">
           {data.map((e)=>{
-            return  <Link to={`/note/${id}`}>
+            return  <Link to={`/note/${e.subCode}`}>
           <Card 
         title={e.title}
         subCode={e.subCode}
