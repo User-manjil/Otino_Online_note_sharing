@@ -4,6 +4,7 @@ import Card from '../reusable/Card'
 import { Link } from 'react-router-dom'
 import banner from '../../../public/banner.png'
 import { Fullscreen } from 'lucide-react'
+import Banner from '../reusable/Banner'
 const Home = () => {
   const data =[
   {
@@ -61,7 +62,7 @@ const Home = () => {
   return (
     <div className='w-full     '>
       <div className='w-full h-90 bg-yellow-400 rounded-xl'>
-        <img src={banner} className='w-fit h-full m-auto' alt="" />
+       <Banner/>
       </div>
       <div className="flex flex-col ">
         <Title heading="Featured Notes" />

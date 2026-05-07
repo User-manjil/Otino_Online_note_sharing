@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className='w-full px-2 sm:px-10 '>
      <Navbar />
-     <SearchBar / >
+    
      
       <Routes>
         <Route  path='/' element={<Home />} />
