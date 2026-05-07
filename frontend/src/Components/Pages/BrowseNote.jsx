@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Card from '../reusable/Card'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../Context/UserContext';
+import FilterData from '../reusable/FilterData';
 
 const BrowseNote = () => {
 
@@ -64,13 +65,16 @@ const BrowseNote = () => {
 
 
   return (
-    <div className='w-full flex flex-col gap-5 sm:gap-0'>
-
-      {inputData.length > 0 && (
+    <div className='w-full flex  gap-10 '>
+      <div className="flex w-1/4 ">
+        <FilterData/>
+      </div>
+      <div className="flex  flex-col w-full">
+               {inputData.length > 0 && (
         <h1>Showing results for: <strong>{inputData}</strong></h1>
       )}
 
-      <div className="grid items-center gap-10 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-7 m-auto">
+      <div className="grid  w-full items-center gap-50 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-7 m-auto">
 
         {filterData.map((e, index) => (
           <Link to={`/note/${e.title}`} key={index}>
@@ -85,6 +89,20 @@ const BrowseNote = () => {
         ))}
 
       </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+    
+    
+    
     </div>
   )
 }
