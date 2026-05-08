@@ -8,12 +8,12 @@ const Proflile = () => {
   },[user.loggedIn]);
     
   return (
-    <div>
-      <h1>Hello {user.name}</h1>
-      <p>{user.loggedIn ? 'Logged In' : 'Logged Out'}</p>
-
-      <button className='border border-black px-2 py-1 ' onClick={()=>setUser({ ...user,loggedIn: !user.loggedIn})}>Log Out </button>
-      
+    <div className='w-full flex'>
+      <div className="flex w-full h-70 bg-yellow-200 items-center justify-center">
+        <p className='border border-5 border-black px-5 py-4 h-fit rounded-full m-10 font-black text-5xl'>D</p>
+        <div className="flex">demo@gmail.com</div>
+      </div>
+     
     </div>
   )
 }
