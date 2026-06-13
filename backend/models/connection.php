@@ -11,5 +11,4 @@ if ($conn->connect_error) {
 }
 
 
-$user = "select * from users";
 ?>

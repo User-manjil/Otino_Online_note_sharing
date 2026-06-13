@@ -1,110 +1,82 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Card from '../reusable/Card'
-import { Link } from 'react-router-dom'
-import { UserContext } from '../Context/UserContext';
-import FilterData from '../reusable/FilterData';
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Card from "../reusable/Card";
+import FilterData from "../reusable/FilterData";
+import { UserContext } from "../Context/UserContext";
+import { apiGet } from "../../lib/api";
+
+
 
 const BrowseNote = () => {
-
-  const data = [
-    {
-      "title": "Fundamentals of Programming",
-      "subCode": "CSC-112",
-      "author": "Aarav Shrestha",
-      "rating": 4.3,
-      "rate": 120
-    },
-    {
-      "title": "Database Management Systems",
-      "subCode": "CSC-220",
-      "author": "Sneha Bhandari",
-      "rating": 4.7,
-      "rate": 95
-    },
-    {
-      "title": "Data Structures & Algorithms",
-      "subCode": "CSC-210",
-      "author": "Bikash Thapa",
-      "rating": 4.9,
-      "rate": 150
-    },
-    {
-      "title": "Web Technology",
-      "subCode": "CSC-318",
-      "author": "Rijan Rai",
-      "rating": 4.6,
-      "rate": 80
-    },
-    {
-      "title": "Operating Systems",
-      "subCode": "CSC-314",
-      "author": "Manish Karki",
-      "rating": 4.2,
-      "rate": 110
-    },
-    {
-      "title": "Computer Networks",
-      "subCode": "CSC-320",
-      "author": "Pratik Basnet",
-      "rating": 4.8,
-      "rate": 140
-    }
-  ];
-
   const { inputData } = useContext(UserContext);
 
-  const [filterData, setFilterData] = useState(data);
+  const [notes, setNotes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const filtered = data.filter((e) =>
-      e.title.toLowerCase().includes(inputData.toLowerCase())
-    );
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
 
-    setFilterData(filtered);
+    apiGet("/notes/list.php", {
+      q: inputData || "",
+      limit: 50,
+      offset: 0,
+    })
+      .then((data) => {
+        if (cancelled) return;
+        setNotes(data.data || []);
+      })
+      .catch((e) => {
+        if (cancelled) return;
+        setError(e.message);
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [inputData]);
 
-
   return (
-    <div className='w-full flex  gap-10 '>
+    <div className="w-full flex  gap-10 ">
       <div className="flex w-1/4 ">
-        <FilterData/>
+        <FilterData />
       </div>
+
       <div className="flex  flex-col w-full">
-               {inputData.length > 0 && (
-        <h1>Showing results for: <strong>{inputData}</strong></h1>
-      )}
+        {inputData && inputData.length > 0 && (
+          <h1>
+            Showing results for: <strong>{inputData}</strong>
+          </h1>
+        )}
 
-      <div className="grid  w-full items-center gap-50 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-7 m-auto">
+        {error && <div className="text-red-600 text-sm">{error}</div>}
+        {loading && <div className="py-6">Loading...</div>}
 
-        {filterData.map((e, index) => (
-          <Link to={`/note/${e.title}`} key={index}>
-            <Card
-              title={e.title}
-              subCode={e.subCode}
-              author={e.author}
-              rating={e.rating}
-              rate={e.rate}
-            />
-          </Link>
-        ))}
-
+        {!loading && (
+          <div className="grid  w-full items-center gap-50 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-7 m-auto">
+            {notes.map((n) => (
+              <Link to={`/note/${n.id}`} key={n.id}>
+                <Card
+                  title={n.title}
+                  subCode={n.subject_code}
+                  author={n.author_name}
+                  rating={n.rating}
+                  rate={n.min_active_price ?? n.base_price}
+                />
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
-
-
-
-
-
-
-
-
-
-
-      </div>
-    
-    
-    
     </div>
-  )
-}
+  );
+};
 
-export default BrowseNote
+export default BrowseNote;
+
